@@ -1,6 +1,6 @@
 import { Api } from "@/lib/api";
 import { useCustomMutation } from "@/lib/react-query/mutation";
-import { MutationOptions } from "react-query";
+import { MutationOptions } from "@tanstack/react-query";
 import { OnboardPayload, OnboardResponse } from "./types";
 
 const CREATE_PROFILE_ENDPOINT = "/v1/profile";
@@ -18,7 +18,7 @@ export const useCreateProfile = (
   options: MutationOptions<OnboardResponse, Error, OnboardPayload> = {}
 ) =>
   useCustomMutation<any, Error, OnboardPayload>({
-    mutationKey: "create-profile",
+    mutationKey: ["create-profile"],
     mutationFn: createProfile,
     ...options,
   });

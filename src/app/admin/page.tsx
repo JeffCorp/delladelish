@@ -1,9 +1,5 @@
 
-export default function ({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function () {
   return (
     <div>
       Dashboard

@@ -1,10 +1,12 @@
-import { API_BASE_URL, USER_TOKEN_KEY, X_API_KEY } from "@/constants/";
+import constants from "@/constants";
 import { IAuthToken } from "@/services/auth/types";
 import type { AxiosRequestConfig, AxiosResponse } from "axios";
 import _axios from "axios";
 import axiosRetry from "axios-retry";
 import { Cookies } from "react-cookie";
 import type { IApiErrorResponse } from "./types";
+
+const { API_BASE_URL, USER_TOKEN_KEY, X_API_KEY } = constants;
 
 const cookies = new Cookies();
 export const loadAuthToken = (): IAuthToken | null => {

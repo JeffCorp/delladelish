@@ -99,7 +99,7 @@ export default function OrderNow() {
     },
   })
 
-  const selectedItemPrice = menuData?.find(item => item.name === selectedItem)?.price || 0
+  const selectedItemPrice = menuData?.find((item: any) => item.name === selectedItem)?.price || 0
 
   return (
     <Box bg={bgColor} minH="100vh" py={12}>
@@ -118,7 +118,7 @@ export default function OrderNow() {
                     onChange={(e) => setSelectedItem(e.target.value)}
                     isDisabled={isLoading}
                   >
-                    {menuData?.map((item) => (
+                    {menuData?.map((item: any) => (
                       <option key={item._id} value={item.name}>
                         {item.name} - ₦{item.price.toLocaleString()}/liter
                       </option>
@@ -187,7 +187,7 @@ export default function OrderNow() {
                   deliveryTime,
                   phoneNumber,
                 })}
-                isLoading={orderMutation.isLoading}
+                isLoading={orderMutation.isPending}
               >
                 Place Order
               </Button>

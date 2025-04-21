@@ -7,17 +7,15 @@ import {
   FormControl,
   FormLabel,
   Heading,
-  Icon,
   Input,
   Stack,
   Text,
   useColorModeValue,
-  useToast,
+  useToast
 } from '@chakra-ui/react';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { FaLock, FaUser } from 'react-icons/fa';
 
 export default function Login() {
   const [email, setEmail] = useState('')
@@ -106,9 +104,9 @@ export default function Login() {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="admin@example.com"
                     size="lg"
-                    leftElement={
-                      <Icon as={FaUser} color="gray.500" w={4} h={4} ml={3} />
-                    }
+                  // leftElement={
+                  //   <Icon as={FaUser} color="gray.500" w={4} h={4} ml={3} />
+                  // }
                   />
                 </FormControl>
 
@@ -120,9 +118,9 @@ export default function Login() {
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter your password"
                     size="lg"
-                    leftElement={
-                      <Icon as={FaLock} color="gray.500" w={4} h={4} ml={3} />
-                    }
+                  // leftElement={
+                  //   <Icon as={FaLock} color="gray.500" w={4} h={4} ml={3} />
+                  // }
                   />
                 </FormControl>
 

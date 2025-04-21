@@ -1,9 +1,4 @@
-import {
-  BASE_AUTH_PATH,
-  BASE_PROFILE_PATH,
-  PROFILE_PATH,
-  USER_TOKEN_KEY,
-} from "@/constants";
+import constants from "@/constants";
 import { Api } from "@/lib/api";
 import { useCustomMutation } from "@/lib/react-query/mutation";
 import { useCustomQuery } from "@/lib/react-query/query";
@@ -20,6 +15,8 @@ import {
 } from "./types";
 
 const cookies = new Cookies();
+const { BASE_AUTH_PATH, BASE_PROFILE_PATH, PROFILE_PATH, USER_TOKEN_KEY } =
+  constants;
 
 export const loadAuthToken = (): IAuthToken | null => {
   const sToken = cookies.get(USER_TOKEN_KEY);

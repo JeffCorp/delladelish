@@ -72,7 +72,7 @@ const DashboardCard = ({ title, value, icon, change, subtitle }: DashboardCardPr
   )
 }
 
-const RecentOrderCard = ({ order }) => {
+const RecentOrderCard = ({ order }: { order: any }) => {
   const bgColor = useColorModeValue('white', 'gray.700')
 
   return (

@@ -1,8 +1,10 @@
-import { CONTENT_PLAN, REWRITE_CONTENT, SCHEDULE_CONTENT } from "@/constants";
+import constants from "@/constants";
 import { Api } from "@/lib/api";
 import { useCustomMutation } from "@/lib/react-query/mutation";
 import { ScheduleContentData } from "@/services/content-planning/types";
-import { MutationOptions } from "react-query";
+import { MutationOptions } from "@tanstack/react-query";
+
+const { CONTENT_PLAN, REWRITE_CONTENT, SCHEDULE_CONTENT } = constants;
 
 const getContentPlans = async (): Promise<any> => {
   try {
@@ -41,28 +43,28 @@ const scheduleContent = async (data: ScheduleContentData): Promise<any> => {
 };
 
 export const useGetContentPlans = (
-  options: MutationOptions<any, Error, string> = {}
+  options: MutationOptions<any, Error, string, any> = {}
 ) =>
-  useCustomMutation<any, Error, string>({
-    mutationKey: "get-content-plans",
+  useCustomMutation({
+    mutationKey: ["get-content-plans"],
     mutationFn: getContentPlans,
     ...options,
   });
 
 export const useSaveContentPlan = (
-  options: MutationOptions<any, Error, any> = {}
+  options: MutationOptions<any, Error, any, any> = {}
 ) =>
   useCustomMutation<any, Error, any>({
-    mutationKey: "save-content-plan",
+    mutationKey: ["save-content-plan"],
     mutationFn: saveContentPlan,
     ...options,
   });
 
 export const useRewriteContent = (
-  options: MutationOptions<any, Error, any> = {}
+  options: MutationOptions<any, Error, any, any> = {}
 ) =>
   useCustomMutation<any, Error, any>({
-    mutationKey: "rewrite-content-plan",
+    mutationKey: ["rewrite-content-plan"],
     mutationFn: rewriteContent,
     ...options,
   });
@@ -71,7 +73,7 @@ export const useScheduleContent = (
   options: MutationOptions<any, Error, ScheduleContentData> = {}
 ) =>
   useCustomMutation<any, Error, ScheduleContentData>({
-    mutationKey: "schedule-content",
+    mutationKey: ["schedule-content"],
     mutationFn: scheduleContent,
     ...options,
   });

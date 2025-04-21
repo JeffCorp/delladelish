@@ -1,6 +1,8 @@
-import { CONTENT_PATH } from "@/constants";
+import constants from "@/constants";
 import { Api } from "@/lib/api";
 import { useCustomMutation } from "@/lib/react-query/mutation";
+
+const { CONTENT_PATH } = constants;
 
 const createContentPlanning = async (data: any) => {
   try {

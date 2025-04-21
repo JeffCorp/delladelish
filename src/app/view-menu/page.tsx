@@ -42,11 +42,11 @@ const proteinItems: MenuItem[] = [
     preparationTime: '30-45 mins',
     rating: 4.8,
   },
-  { id: 2, name: 'Peppered Turkey', prices: { '1.5': 16000, '2.5': 13000, '5': 28000 }, description: 'Tender turkey with a peppery kick' },
-  { id: 3, name: 'Peppered Beef', prices: { '1.5': 18000, '2.5': 19500, '5': 38500 }, description: 'Succulent beef with a spicy pepper coating' },
-  { id: 4, name: 'Fried Fish', prices: { '1.5': 10000, '2.5': 15000, '5': 30000 }, description: 'Crispy fried fish' },
-  { id: 5, name: 'Goat Meat', prices: { '1.5': 18000 }, description: 'Tender and flavorful goat meat' },
-  { id: 6, name: 'Peppered Snail', prices: { 'piece': 3000 }, description: 'Delicacy of peppered snails' },
+  { id: 2, name: 'Peppered Turkey', prices: { '1.5': 16000, '2.5': 13000, '5': 28000 }, description: 'Tender turkey with a peppery kick', category: "Meal" },
+  { id: 3, name: 'Peppered Beef', prices: { '1.5': 18000, '2.5': 19500, '5': 38500 }, description: 'Succulent beef with a spicy pepper coating', category: "Meal" },
+  { id: 4, name: 'Fried Fish', prices: { '1.5': 10000, '2.5': 15000, '5': 30000 }, description: 'Crispy fried fish', category: "Meal" },
+  { id: 5, name: 'Goat Meat', prices: { '1.5': 18000 }, description: 'Tender and flavorful goat meat', category: "Meal" },
+  { id: 6, name: 'Peppered Snail', prices: { 'piece': 3000 }, description: 'Delicacy of peppered snails', category: "Meal" },
 ]
 
 const specialItems: MenuItem[] = [
@@ -59,10 +59,10 @@ const specialItems: MenuItem[] = [
     preparationTime: '20-35 mins',
     rating: 4.7,
   },
-  { id: 8, name: 'Moi Moi', prices: { '1.5': 12000, '2.5': 15000, '5': 30000 }, description: 'Steamed bean pudding' },
-  { id: 9, name: 'Ewa Agoyin', prices: { '1.5': 15000, '2.5': 19000, '5': 38000 }, description: 'Mashed beans with spicy sauce' },
-  { id: 10, name: 'Akara', prices: { '1.5': 10000, '2.5': 13000, '5': 25000 }, description: 'Deep-fried bean cakes' },
-  { id: 11, name: 'Fire Pasta', prices: { '1.5': 11000, '2.5': 12000, '5': 24000 }, description: 'Spicy pasta dish' },
+  { id: 8, name: 'Moi Moi', prices: { '1.5': 12000, '2.5': 15000, '5': 30000 }, description: 'Steamed bean pudding', category: "Meal" },
+  { id: 9, name: 'Ewa Agoyin', prices: { '1.5': 15000, '2.5': 19000, '5': 38000 }, description: 'Mashed beans with spicy sauce', category: "Meal" },
+  { id: 10, name: 'Akara', prices: { '1.5': 10000, '2.5': 13000, '5': 25000 }, description: 'Deep-fried bean cakes', category: "Meal" },
+  { id: 11, name: 'Fire Pasta', prices: { '1.5': 11000, '2.5': 12000, '5': 24000 }, description: 'Spicy pasta dish', category: "Meal" },
 ]
 
 const MenuCard = ({ item }: { item: MenuItem }) => {

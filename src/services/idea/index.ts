@@ -1,8 +1,11 @@
-import { GENERATE_IDEAS, REMOVE_SAVED_IDEA, SAVE_IDEA } from "@/constants";
+import constants from "@/constants";
 import { Api } from "@/lib/api";
 import { useCustomMutation } from "@/lib/react-query/mutation";
 import { useCustomQuery } from "@/lib/react-query/query";
-import { MutationOptions, QueryOptions } from "react-query";
+import { MutationOptions } from "@tanstack/react-query";
+import { QueryOptions } from "react-query";
+
+const { GENERATE_IDEAS, REMOVE_SAVED_IDEA, SAVE_IDEA } = constants;
 
 const getIdeas = async (data: string): Promise<any> => {
   try {
@@ -43,35 +46,35 @@ const removeSavedIdea = async (data: string): Promise<any> => {
 };
 
 export const useGetIdeas = (
-  options: MutationOptions<any, Error, string> = {}
+  options: MutationOptions<any, Error, any, any> = {}
 ) =>
   useCustomMutation<any, Error, string>({
-    mutationKey: "generate-ideas",
+    mutationKey: ["generate-ideas"],
     mutationFn: getIdeas,
     ...options,
   });
 
 export const useSaveIdea = (
-  options: MutationOptions<any, Error, string> = {}
+  options: MutationOptions<any, Error, string, any> = {}
 ) =>
   useCustomMutation<any, Error, string>({
-    mutationKey: "save-idea",
+    mutationKey: ["save-idea"],
     mutationFn: saveIdea,
     ...options,
   });
 
 export const useSavedIdeas = (options: QueryOptions<any, Error> = {}) =>
   useCustomQuery<any, Error, any>({
-    queryKey: "saved-ideas",
+    queryKey: ["saved-ideas"],
     queryFn: getSavedIdeas,
     ...options,
   });
 
 export const useRemoveSavedIdea = (
-  options: MutationOptions<any, Error, string> = {}
+  options: MutationOptions<any, Error, string, any> = {}
 ) =>
   useCustomMutation<any, Error, string>({
-    mutationKey: "remove-saved-idea",
+    mutationKey: ["remove-saved-idea"],
     mutationFn: removeSavedIdea,
     ...options,
   });

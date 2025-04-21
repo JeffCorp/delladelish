@@ -1,9 +1,12 @@
-import { STYLE_GUIDE } from "@/constants";
+import constants from "@/constants";
 import { Api } from "@/lib/api";
 import { useCustomMutation } from "@/lib/react-query/mutation";
 import { useCustomQuery } from "@/lib/react-query/query";
 import { StyleGuide } from "@/services/style-guides/types";
-import { MutationOptions, QueryOptions } from "react-query";
+import { MutationOptions } from "@tanstack/react-query";
+import { QueryOptions } from "react-query";
+
+const { STYLE_GUIDE } = constants;
 
 const getStyleGuides = async (): Promise<any> => {
   try {
@@ -24,10 +27,10 @@ const saveStyleGuide = async (data: StyleGuide): Promise<any> => {
 };
 
 export const useGetStyleGuides = (
-  options: MutationOptions<any, Error, string> = {}
+  options: MutationOptions<any, Error, string, any> = {}
 ) =>
   useCustomMutation<any, Error, string>({
-    mutationKey: "get-style-guides",
+    mutationKey: ["get-style-guides"],
     mutationFn: getStyleGuides,
     ...options,
   });
@@ -43,7 +46,7 @@ export const useSaveStyleGuide = (
   options: MutationOptions<any, Error, StyleGuide> = {}
 ) =>
   useCustomMutation<any, Error, StyleGuide>({
-    mutationKey: "save-style-guide",
+    mutationKey: ["save-style-guide"],
     mutationFn: saveStyleGuide,
     ...options,
   });

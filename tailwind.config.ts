@@ -30,7 +30,7 @@ const config: Config = {
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#FFB800", // Food-inspired yellow
+          DEFAULT: "#FF800E", // Food-inspired yellow
           foreground: "#000000",
         },
         destructive: {
@@ -56,7 +56,7 @@ const config: Config = {
         // Food-inspired colors
         food: {
           red: "#F00B0B",
-          yellow: "#FFB800",
+          yellow: "#FF800E",
           green: "#4CAF50",
           orange: "#FF8C00",
           cream: "#FFF9E6",

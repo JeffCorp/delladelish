@@ -1,18 +1,17 @@
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import {
-  ChefHat,
-  Heart,
-  Users,
   Award,
+  ChefHat,
+  Clock,
+  Heart,
   Leaf,
   Shield,
-  Clock,
   Star,
+  Users,
 } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function AboutPage() {
   return (
@@ -292,7 +291,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                name: "Oluwaftosin Obe",
+                name: "Oluwatosin Obe",
                 role: "Partner/Nutritionist",
                 image: "/placeholder.svg?height=300&width=300",
                 bio: "15+ years of culinary excellence with expertise in healthy cuisine",

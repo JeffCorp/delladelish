@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     icon: '/favicon.ico',
   },
   openGraph: {
-    images: '/images/cravings.jpg',
+    images: '/images/light-logo.png',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Dela Delish - Fresh & Healthy Food Delivery',
     description: 'Fresh, healthy meals crafted by expert chefs and delivered to your door in 30 minutes or less.',
-    images: '/images/cravings.jpg',
+    images: '/images/light-logo.png',
   },
   metadataBase: new URL('https://deladelish.ng'),
 }
